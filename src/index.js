@@ -9,15 +9,34 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const date = new Date();
+//date function below you can manually input or leave blank to let prog auto detect current
+const date = new Date(2021, 1, 1, 23);
 const currentTime = date.getHours();
 
 console.log(currentTime);
 
+let greeting;
 
+const customStyle = {
+  //what in the world...she just sets a blank field  for the color property?
+  color: ""
+};
 
+if (currentTime < 12) {
+  greeting = "Good Morning";
+  customStyle.color = "red";
+} else if (currentTime < 18) {
+  //why didn't she put a range here? ie. 12 < currentTime < 18?
+  greeting = "Good Afternoon";
+  customStyle.color = "green";
+} else {
+  greeting = "Good Night";
+  customStyle.color = "blue";
+}
 
 ReactDOM.render(
-  <h1 style={date} + {greeting}>Good</h1>,
+  <h1 className="heading" style={customStyle}>
+    {greeting}
+  </h1>,
   document.getElementById("root")
 );
