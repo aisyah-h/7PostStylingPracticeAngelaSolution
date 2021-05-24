@@ -1,2 +1,2 @@
-# 7PostStylingPracticeAngelaSolution
+# 7PostStylingPractice
 Created with CodeSandbox
